@@ -18,6 +18,7 @@ export function Hero() {
         src="/images/hero-residence.png"
         alt="A warm South Florida coastal residence glowing at golden hour"
         className="absolute inset-0 h-full w-full"
+        imgClassName="[object-position:78%_center] md:[object-position:center]"
         priority
         sizes="100vw"
       />
