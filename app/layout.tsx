@@ -20,11 +20,19 @@ const inter = Inter({
 const description =
   'This is not a facility. This is a home. A private wellness residence in South Florida — Mac and Laura are here with you, at least 5 days a week. Only 6 clients. Same-day admission. Call (954) 355-2040.'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000'
+
 export const metadata: Metadata = {
   title: 'Vita Nova — Private Wellness Residence · South Florida',
   description,
   generator: 'v0.app',
-  metadataBase: new URL('https://vitanova.example'),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: 'Vita Nova — Private Wellness Residence · South Florida',
     description,

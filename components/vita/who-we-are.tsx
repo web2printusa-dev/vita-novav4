@@ -75,16 +75,6 @@ export function WhoWeAre() {
           </Reveal>
         ))}
       </div>
-
-      {/* Together image */}
-      <Reveal delay={120}>
-        <EstateImage
-          src="/images/mac-laura-together.png"
-          alt="Mac and Laura McGeorge together"
-          className="mt-8 aspect-[16/9] w-full rounded-lg border border-border"
-          sizes="(min-width: 1024px) 1024px, 100vw"
-        />
-      </Reveal>
     </section>
   )
 }
