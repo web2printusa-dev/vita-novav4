@@ -34,11 +34,11 @@ export function WhoWeHelp() {
         </Reveal>
 
         <Reveal delay={200}>
-          <ul className="mt-12 flex flex-wrap gap-3">
+          <ul className="mt-12 flex flex-wrap gap-3 md:gap-4">
             {pills.map((pill) => (
               <li
                 key={pill}
-                className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground"
+                className="rounded-full border-2 border-accent/35 bg-accent/10 px-6 py-3 text-base font-semibold text-foreground shadow-sm transition-colors hover:border-accent/60 hover:bg-accent/15 md:px-7 md:py-3.5 md:text-lg"
               >
                 {pill}
               </li>

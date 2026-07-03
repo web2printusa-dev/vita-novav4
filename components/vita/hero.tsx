@@ -22,7 +22,11 @@ export function Hero() {
         sizes="100vw"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-[#26241f]/85 via-[#26241f]/45 to-[#26241f]/35"
+        className="absolute inset-0 bg-gradient-to-t from-[#211f1a]/90 via-[#211f1a]/55 to-[#211f1a]/40"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-[#1c1a16]/85 via-[#1c1a16]/45 to-transparent md:via-[#1c1a16]/30 md:to-transparent"
         aria-hidden="true"
       />
 
@@ -34,14 +38,16 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="mt-6 max-w-3xl font-serif text-5xl font-medium leading-[1.02] text-background text-balance sm:text-6xl md:text-7xl">
+          <h1 className="mt-6 max-w-4xl font-serif text-6xl font-semibold leading-[1.0] text-background text-balance [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-7xl md:text-8xl">
             This is not a facility.
-            <span className="mt-1 block italic text-[#e2b984]">This is a home.</span>
+            <span className="mt-1 block italic font-medium text-[#f0c98a] [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
+              This is a home.
+            </span>
           </h1>
         </Reveal>
 
         <Reveal delay={200}>
-          <p className="mt-7 max-w-xl text-base leading-relaxed text-[#f0e9dd] md:text-lg">
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#f7f2e9] [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] md:text-xl">
             And when you walk through our doors, you become family. Mac and Laura are here with you —
             at least 5 days a week, no exceptions.
           </p>
@@ -49,13 +55,15 @@ export function Hero() {
 
         {/* Stats bar */}
         <Reveal delay={300}>
-          <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/20 pt-8 md:grid-cols-4">
+          <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/30 pt-8 md:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.value}>
-                <dt className="font-serif text-2xl font-medium text-[#e2b984] md:text-3xl">
+                <dt className="font-serif text-2xl font-medium text-[#f0c98a] [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] md:text-3xl">
                   {stat.value}
                 </dt>
-                <dd className="mt-1.5 text-sm leading-snug text-[#e9dcc7]">{stat.label}</dd>
+                <dd className="mt-1.5 text-sm leading-snug text-[#f4ece0] [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">
+                  {stat.label}
+                </dd>
               </div>
             ))}
           </dl>
