@@ -280,16 +280,7 @@ export default function Page() {
 
         {/* KITCHEN PHOTO */}
         <div className="photo-panel">
-          <img src="/images/evening-cooking.jpeg" alt="Residents and staff cooking dinner together in the kitchen at Vita Nova" />
-          <div className="ov-left" />
-          <div className="ov-bottom" />
-          <div className="panel-content">
-            <span className="panel-num">Life at Vita Nova &nbsp;·&nbsp; Every evening</span>
-            <div className="panel-quote">
-              {'"Every evening starts here — around food, around conversation, around family."'}
-            </div>
-            <div className="panel-sub">Mac &amp; Laura · South Florida</div>
-          </div>
+          <img src="/images/evening-cooking.jpeg" alt="Residents and staff cooking dinner together in the kitchen at Vita Nova, with the caption: Every evening starts here — around food, around conversation, around family." />
         </div>
 
         <div className="gold-rule" />
