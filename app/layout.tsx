@@ -27,7 +27,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000'
+      : 'https://vnrenew.com'
 
 export const metadata: Metadata = {
   title: 'Vita Nova — Private Wellness Residence · South Florida',
@@ -40,20 +40,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Vita Nova',
-    images: [
-      {
-        url: '/images/hero-residence.png',
-        width: 1200,
-        height: 630,
-        alt: 'A warm South Florida coastal residence at golden hour',
-      },
-    ],
+    url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Vita Nova — Private Wellness Residence · South Florida',
     description,
-    images: ['/images/hero-residence.png'],
   },
 }
 
