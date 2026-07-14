@@ -112,6 +112,7 @@ p strong{color:#1a1a1a;font-weight:600}
 .prog-name{font-family:var(--font-playfair),serif;font-size:20px;color:#1a1a1a;line-height:1.2}
 .prog-desc{font-size:14px;line-height:1.9;color:#444444;margin-bottom:.75rem}
 .prog-note{font-size:11px;color:#999;font-style:italic}
+.prog-price{font-family:var(--font-playfair),serif;font-size:17px;color:#b8955a}
 
 .nova-meaning{text-align:center;padding:4rem 2rem;background:#faf7f2;border-top:1px solid #e0d0c0;border-bottom:1px solid #e0d0c0}
 .nova-word{font-family:var(--font-playfair),serif;font-size:48px;color:#b8955a;margin-bottom:.6rem}
