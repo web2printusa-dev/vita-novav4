@@ -126,10 +126,10 @@ export default function Page() {
               VITA <span>NOVA</span>
             </div>
           </div>
-          <div className="nav-right">
+          <a className="nav-right" href="tel:+19543552040" aria-label="Call Vita Nova at (954) 355-2040">
             <div className="nav-phone-big">(954) 355-2040</div>
             <div className="nav-phone-label">Speak with someone now</div>
-          </div>
+          </a>
         </div>
         <div className="nav-tabs">
           {TABS.map((t) => (
