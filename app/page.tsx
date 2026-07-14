@@ -280,7 +280,7 @@ export default function Page() {
 
         {/* KITCHEN PHOTO */}
         <div className="photo-panel">
-          <img src="/images/evening-table.png" alt="Warm evening dinner table set for a family meal at Vita Nova" />
+          <img src="/images/evening-cooking.jpeg" alt="Residents and staff cooking dinner together in the kitchen at Vita Nova" />
           <div className="ov-left" />
           <div className="ov-bottom" />
           <div className="panel-content">
