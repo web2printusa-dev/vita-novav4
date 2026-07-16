@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 type PageId = "home" | "about" | "approach" | "programs" | "insurance" | "contact"
 
@@ -88,41 +88,21 @@ function Footer({ full = false }: { full?: boolean }) {
 
 export default function Page() {
   const [active, setActive] = useState<PageId>("home")
-  const [formSuccess, setFormSuccess] = useState(false)
+
+  useEffect(() => {
+    const SRC = "https://links.bornforprosperity.com/js/form_embed.js"
+    if (document.querySelector(`script[src="${SRC}"]`)) return
+    const script = document.createElement("script")
+    script.src = SRC
+    script.async = true
+    document.body.appendChild(script)
+  }, [])
 
   function showPage(id: PageId) {
     setActive(id)
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
-  }
-
-  function submitForm(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const form = e.currentTarget
-    const fname = (form.elements.namedItem("fname") as HTMLInputElement).value
-    const lname = (form.elements.namedItem("lname") as HTMLInputElement).value
-    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value
-    const calltime = (form.elements.namedItem("calltime") as HTMLSelectElement).value
-    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value
-    const subject = encodeURIComponent("Vita Nova — Private Inquiry from " + fname)
-    const body = encodeURIComponent(
-      "Name: " +
-        fname +
-        " " +
-        lname +
-        "\n" +
-        "Phone: " +
-        phone +
-        "\n" +
-        "Best time to call: " +
-        calltime +
-        "\n\n" +
-        "Message:\n" +
-        message,
-    )
-    window.location.href = "mailto:powerpartnershipllc@gmail.com?subject=" + subject + "&body=" + body
-    setFormSuccess(true)
   }
 
   return (
@@ -1453,214 +1433,23 @@ export default function Page() {
                   No auto-replies. No call centers.
                 </p>
 
-                <form onSubmit={submitForm} style={{ display: "flex", flexDirection: "column", gap: ".85rem" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: ".75rem" }}>
-                    <div>
-                      <label
-                        htmlFor="fname"
-                        style={{
-                          fontSize: 9,
-                          letterSpacing: ".16em",
-                          textTransform: "uppercase",
-                          color: "#b8955a",
-                          display: "block",
-                          marginBottom: ".3rem",
-                        }}
-                      >
-                        First Name *
-                      </label>
-                      <input
-                        id="fname"
-                        name="fname"
-                        required
-                        type="text"
-                        placeholder="First name"
-                        style={{
-                          width: "100%",
-                          border: "1px solid #d0c0b0",
-                          padding: ".65rem .85rem",
-                          fontSize: 13,
-                          fontFamily: "inherit",
-                          outline: "none",
-                          borderRadius: 0,
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="lname"
-                        style={{
-                          fontSize: 9,
-                          letterSpacing: ".16em",
-                          textTransform: "uppercase",
-                          color: "#b8955a",
-                          display: "block",
-                          marginBottom: ".3rem",
-                        }}
-                      >
-                        Last Name <span style={{ color: "#aaa", fontSize: 8 }}>(optional)</span>
-                      </label>
-                      <input
-                        id="lname"
-                        name="lname"
-                        type="text"
-                        placeholder="Last name"
-                        style={{
-                          width: "100%",
-                          border: "1px solid #d0c0b0",
-                          padding: ".65rem .85rem",
-                          fontSize: 13,
-                          fontFamily: "inherit",
-                          outline: "none",
-                          borderRadius: 0,
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      style={{
-                        fontSize: 9,
-                        letterSpacing: ".16em",
-                        textTransform: "uppercase",
-                        color: "#b8955a",
-                        display: "block",
-                        marginBottom: ".3rem",
-                      }}
-                    >
-                      Best Phone Number *
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      required
-                      type="tel"
-                      placeholder="Your phone number"
-                      style={{
-                        width: "100%",
-                        border: "1px solid #d0c0b0",
-                        padding: ".65rem .85rem",
-                        fontSize: 13,
-                        fontFamily: "inherit",
-                        outline: "none",
-                        borderRadius: 0,
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="calltime"
-                      style={{
-                        fontSize: 9,
-                        letterSpacing: ".16em",
-                        textTransform: "uppercase",
-                        color: "#b8955a",
-                        display: "block",
-                        marginBottom: ".3rem",
-                      }}
-                    >
-                      Best Time to Call *
-                    </label>
-                    <select
-                      id="calltime"
-                      name="calltime"
-                      required
-                      defaultValue=""
-                      style={{
-                        width: "100%",
-                        border: "1px solid #d0c0b0",
-                        padding: ".65rem .85rem",
-                        fontSize: 13,
-                        fontFamily: "inherit",
-                        outline: "none",
-                        borderRadius: 0,
-                        background: "#fff",
-                        color: "#1a1a1a",
-                      }}
-                    >
-                      <option value="">Select a time</option>
-                      <option>Morning — 7am to 11am</option>
-                      <option>Midday — 11am to 2pm</option>
-                      <option>Afternoon — 2pm to 5pm</option>
-                      <option>Evening — 5pm to 8pm</option>
-                      <option>Anytime</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      style={{
-                        fontSize: 9,
-                        letterSpacing: ".16em",
-                        textTransform: "uppercase",
-                        color: "#b8955a",
-                        display: "block",
-                        marginBottom: ".3rem",
-                      }}
-                    >
-                      Tell us briefly what is going on <span style={{ color: "#aaa", fontSize: 8 }}>(optional)</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      placeholder="Whatever you are comfortable sharing — this goes directly and privately to Mac and Laura only."
-                      style={{
-                        width: "100%",
-                        border: "1px solid #d0c0b0",
-                        padding: ".65rem .85rem",
-                        fontSize: 13,
-                        fontFamily: "inherit",
-                        outline: "none",
-                        borderRadius: 0,
-                        resize: "vertical",
-                      }}
-                    />
-                  </div>
-                  <div style={{ fontSize: 10, color: "#aaa", lineHeight: 1.7 }}>
-                    Your message goes directly and privately to Mac and Laura only. Nothing is stored or shared anywhere
-                    else. This is completely confidential.
-                  </div>
-                  <button
-                    type="submit"
-                    style={{
-                      background: "#1a1916",
-                      color: "#b8955a",
-                      border: "2px solid #b8955a",
-                      padding: ".9rem 2rem",
-                      fontSize: 11,
-                      letterSpacing: ".16em",
-                      textTransform: "uppercase",
-                      cursor: "pointer",
-                      fontFamily: "inherit",
-                      transition: "all .2s",
-                    }}
-                  >
-                    Send Message Privately
-                  </button>
-                </form>
-
-                {formSuccess && (
-                  <div
-                    style={{ background: "#fdf8f0", borderLeft: "4px solid #b8955a", padding: "1.25rem", marginTop: "1rem" }}
-                  >
-                    <p
-                      style={{
-                        fontSize: 14,
-                        color: "#1a1a1a",
-                        fontFamily: "var(--font-playfair), serif",
-                        fontStyle: "italic",
-                        marginBottom: ".3rem",
-                      }}
-                    >
-                      {'"We received your message."'}
-                    </p>
-                    <p style={{ fontSize: 12, color: "#555" }}>
-                      Mac or Laura will call you personally within a few hours. Your information is completely private.
-                    </p>
-                  </div>
-                )}
+                <iframe
+                  src="https://links.bornforprosperity.com/widget/form/83cFnUa9Or03yF1f1uf1"
+                  style={{ width: "100%", height: 806, border: "none", borderRadius: 8 }}
+                  id="inline-83cFnUa9Or03yF1f1uf1"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Vita Nova Get Started Webform"
+                  data-height="806"
+                  data-layout-iframe-id="inline-83cFnUa9Or03yF1f1uf1"
+                  data-form-id="83cFnUa9Or03yF1f1uf1"
+                  title="Vita Nova Get Started Webform"
+                />
 
                 <div style={{ marginTop: "1.5rem", paddingTop: "1.25rem", borderTop: "1px solid #e0d0c0" }}>
                   <div>
