@@ -50,6 +50,17 @@ function VNLogoLarge({ width = 52 }: { width?: number }) {
   )
 }
 
+function VNFullLockup() {
+  return (
+    <div className="logo-stack">
+      <VNLogoLarge />
+      <div className="logo-rule" />
+      <div className="logo-vita">VITA</div>
+      <div className="logo-nova">NOVA</div>
+    </div>
+  )
+}
+
 function Footer({ full = false }: { full?: boolean }) {
   if (full) {
     return (
@@ -148,7 +159,7 @@ export default function Page() {
       <div className={`page${active === "home" ? " active" : ""}`}>
         {/* DOCK HERO */}
         <div className="dock-hero">
-          <img src="/images/hero-residence.png" alt="Vita Nova waterfront private wellness residence at golden hour" />
+          <img src="/images/hero-dock.jpeg" alt="A group sitting together on a lakeside dock at sunset outside the Vita Nova private wellness residence" />
           <div className="dock-overlay" />
           <div className="dock-content">
             <div className="logo-stack">
@@ -650,7 +661,7 @@ export default function Page() {
         {/* REACH OUT */}
         <section className="reach-block">
           <div className="reach-vn">
-            <VNLogoLarge width={72} />
+            <VNFullLockup />
           </div>
           <div className="reach-line" />
           <h2>
@@ -720,6 +731,13 @@ export default function Page() {
             the mistakes, the searching, and the rebuilding.
           </p>
         </div>
+        <div className="founder-feature">
+          <img
+            src="/images/mac-laura-portrait.jpeg"
+            alt="Mac and Laura holding hands and smiling at each other outdoors in South Florida"
+          />
+          <span className="founder-feature-cap">Mac &amp; Laura · Founders of Vita Nova · South Florida</span>
+        </div>
         <section>
           <div className="inner">
             <div className="bq">
@@ -757,6 +775,23 @@ export default function Page() {
                   genuinely invested in their outcome.
                 </p>
               </div>
+            </div>
+            <div className="founder-gallery">
+              <figure>
+                <img src="/images/mac-laura-pool.jpeg" alt="Mac and Laura together poolside in South Florida" />
+              </figure>
+              <figure>
+                <img
+                  src="/images/mac-laura-outdoors.jpeg"
+                  alt="Mac and Laura outdoors on a sunny day in the Florida Keys"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="/images/mac-laura-poolside.jpeg"
+                  alt="Mac and Laura smiling together by the pool"
+                />
+              </figure>
             </div>
             <div className="callout" style={{ marginTop: "2.5rem" }}>
               <p>
@@ -1679,7 +1714,7 @@ export default function Page() {
         </section>
         <section className="reach-block">
           <div className="reach-vn">
-            <VNLogoLarge width={72} />
+            <VNFullLockup />
           </div>
           <div className="reach-line" />
           <h2>
