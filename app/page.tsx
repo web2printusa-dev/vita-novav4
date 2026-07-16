@@ -148,7 +148,7 @@ export default function Page() {
       <div className={`page${active === "home" ? " active" : ""}`}>
         {/* DOCK HERO */}
         <div className="dock-hero">
-          <img src="/images/hero-residence.png" alt="Vita Nova waterfront private wellness residence at golden hour" />
+          <img src="/images/hero-dock.jpeg" alt="A group sitting together on a lakeside dock at sunset outside the Vita Nova private wellness residence" />
           <div className="dock-overlay" />
           <div className="dock-content">
             <div className="logo-stack">
