@@ -50,6 +50,17 @@ function VNLogoLarge({ width = 52 }: { width?: number }) {
   )
 }
 
+function VNFullLockup() {
+  return (
+    <div className="logo-stack">
+      <VNLogoLarge />
+      <div className="logo-rule" />
+      <div className="logo-vita">VITA</div>
+      <div className="logo-nova">NOVA</div>
+    </div>
+  )
+}
+
 function Footer({ full = false }: { full?: boolean }) {
   if (full) {
     return (
@@ -650,7 +661,7 @@ export default function Page() {
         {/* REACH OUT */}
         <section className="reach-block">
           <div className="reach-vn">
-            <VNLogoLarge width={72} />
+            <VNFullLockup />
           </div>
           <div className="reach-line" />
           <h2>
@@ -1703,7 +1714,7 @@ export default function Page() {
         </section>
         <section className="reach-block">
           <div className="reach-vn">
-            <VNLogoLarge width={72} />
+            <VNFullLockup />
           </div>
           <div className="reach-line" />
           <h2>
