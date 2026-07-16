@@ -720,6 +720,13 @@ export default function Page() {
             the mistakes, the searching, and the rebuilding.
           </p>
         </div>
+        <div className="founder-feature">
+          <img
+            src="/images/mac-laura-portrait.jpeg"
+            alt="Mac and Laura holding hands and smiling at each other outdoors in South Florida"
+          />
+          <span className="founder-feature-cap">Mac &amp; Laura · Founders of Vita Nova · South Florida</span>
+        </div>
         <section>
           <div className="inner">
             <div className="bq">
@@ -757,6 +764,23 @@ export default function Page() {
                   genuinely invested in their outcome.
                 </p>
               </div>
+            </div>
+            <div className="founder-gallery">
+              <figure>
+                <img src="/images/mac-laura-pool.jpeg" alt="Mac and Laura together poolside in South Florida" />
+              </figure>
+              <figure>
+                <img
+                  src="/images/mac-laura-outdoors.jpeg"
+                  alt="Mac and Laura outdoors on a sunny day in the Florida Keys"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="/images/mac-laura-poolside.jpeg"
+                  alt="Mac and Laura smiling together by the pool"
+                />
+              </figure>
             </div>
             <div className="callout" style={{ marginTop: "2.5rem" }}>
               <p>
