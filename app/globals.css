@@ -127,9 +127,7 @@ p strong{color:#1a1a1a;font-weight:600}
 /* REACH */
 .reach-block{text-align:center;padding:6rem 2rem;background:#1a1916;position:relative}
 .reach-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#b8955a}
-.reach-vn{font-family:var(--font-playfair),serif;font-size:90px;font-weight:400;line-height:.9;margin-bottom:2.5rem}
-.reach-vn .v{color:#b8955a}
-.reach-vn .n{color:#ffffff}
+.reach-vn{display:flex;justify-content:center;margin-bottom:2.5rem}
 .reach-line{width:1px;height:48px;background:linear-gradient(to bottom,#b8955a,transparent);margin:0 auto 2.5rem}
 .reach-block h2{margin-bottom:1rem;color:#ffffff}
 .reach-block h2 em{color:#b8955a}
