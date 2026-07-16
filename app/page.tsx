@@ -32,9 +32,9 @@ function VNLogoSmall() {
   )
 }
 
-function VNLogoLarge() {
+function VNLogoLarge({ width = 52 }: { width?: number }) {
   return (
-    <svg viewBox="0 0 64 56" fill="none" style={{ width: 52, height: 46 }} aria-hidden="true">
+    <svg viewBox="0 0 64 56" fill="none" style={{ width, height: (width * 56) / 64 }} aria-hidden="true">
       <polyline
         points="10,4 32,50 54,4"
         stroke="#f0c060"
@@ -650,8 +650,7 @@ export default function Page() {
         {/* REACH OUT */}
         <section className="reach-block">
           <div className="reach-vn">
-            <span className="v">V</span>
-            <span className="n">N</span>
+            <VNLogoLarge width={72} />
           </div>
           <div className="reach-line" />
           <h2>
@@ -1680,8 +1679,7 @@ export default function Page() {
         </section>
         <section className="reach-block">
           <div className="reach-vn">
-            <span className="v">V</span>
-            <span className="n">N</span>
+            <VNLogoLarge width={72} />
           </div>
           <div className="reach-line" />
           <h2>
